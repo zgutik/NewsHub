@@ -1,27 +1,62 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Название вашего проекта</title>
-
+    <title>NewsHub | Minimalist Architecture & Tech</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">NEWS/HUB</div>
+                <ul class="menu">
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Tech</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Culture</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <h1>Добро пожаловать в [Название проекта]!</h1>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1761870065047-f2da9429db23?q=80&w=1080" alt="Architecture">
+                </div>
+                <div class="hero-content">
+                    <span class="category">Design</span>
+                    <h1>The Evolution of Minimalist Architecture in Modern Cities</h1>
+                    <p>As urban spaces become more crowded, architects are turning to minimalism not just as an aesthetic choice...</p>
+                    <div class="meta">By Sarah Jenkins • Feb 11, 2026</div>
+                </div>
+            </div>
+        </section>
 
-    <р>Это стартовая страница моего веб-приложения. </p>
+        <section class="latest">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="news-grid" id="news-grid">
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1763929154494-a3d6eba05282?q=80&w=500" alt="Tech">
+                        <div class="card-body">
+                            <span class="category">Technology</span>
+                            <h3>Abstract Computing: The Future of Quantum Interfaces</h3>
+                            <div class="meta">Feb 10, 2026</div>
+                        </div>
+                    </article>
+                    </div>
+            </div>
+        </section>
+    </main>
 
-    <script src="js/script.js"></script>
-
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NewsHub. Built for ITiVP Lab.</p>
+        </div>
+    </footer>
 </body>
-
 </html>
