@@ -1,0 +1,4 @@
+Project: NewsHub Newspaper Edition
+Typography: Headings - 'Playfair Display' (Serif), Body - 'Inter' (Sans-serif)
+Colors: Text #000000, Background #FFFFFF, Accents #CC0000 (News Red)
+Spacing: Grid gutter 24px, Section margin 48px

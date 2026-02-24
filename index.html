@@ -3,59 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewsHub | Minimalist Architecture & Tech</title>
+    <title>NewsHub — Главный выпуск | Семантическая разметка и доступность</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="header">
+<body class="page">
+    <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+    <header class="page-header" itemscope itemtype="https://schema.org/Organization">
         <div class="container">
-            <nav class="nav">
-                <div class="logo">NEWS/HUB</div>
-                <ul class="menu">
-                    <li><a href="#">Design</a></li>
-                    <li><a href="#">Tech</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Culture</a></li>
+            <div class="page-header__top">
+                <time class="page-header__date" datetime="2026-02-24T09:00:00+03:00">Вторник, 24 февраля 2026</time>
+                <div class="page-header__edition">Специальный выпуск</div>
+            </div>
+            
+            <div class="page-header__logo-zone">
+                <a href="/" itemprop="url" class="page-header__logo-link">
+                    <span class="logo-text" itemprop="name">NewsHub</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav" aria-label="Рубрики газеты">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item"><a href="#" class="main-nav__link">Политика</a></li>
+                    <li class="main-nav__item"><a href="#" class="main-nav__link">Экономика</a></li>
+                    <li class="main-nav__item"><a href="#" class="main-nav__link">Технологии</a></li>
+                    <li class="main-nav__item"><a href="#" class="main-nav__link">Спорт</a></li>
+                    <li class="main-nav__item"><a href="#" class="main-nav__link">Мнение</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1761870065047-f2da9429db23?q=80&w=1080" alt="Architecture">
-                </div>
-                <div class="hero-content">
-                    <span class="category">Design</span>
-                    <h1>The Evolution of Minimalist Architecture in Modern Cities</h1>
-                    <p>As urban spaces become more crowded, architects are turning to minimalism not just as an aesthetic choice...</p>
-                    <div class="meta">By Sarah Jenkins • Feb 11, 2026</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="latest">
-            <div class="container">
-                <h2 class="section-title">Latest News</h2>
-                <div class="news-grid" id="news-grid">
-                    <article class="card">
-                        <img src="https://images.unsplash.com/photo-1763929154494-a3d6eba05282?q=80&w=500" alt="Tech">
-                        <div class="card-body">
-                            <span class="category">Technology</span>
-                            <h3>Abstract Computing: The Future of Quantum Interfaces</h3>
-                            <div class="meta">Feb 10, 2026</div>
-                        </div>
-                    </article>
+    <main id="main" class="page-main container">
+        <div class="newspaper-layout">
+            
+            <article class="main-article" itemscope itemtype="https://schema.org/NewsArticle">
+                <header class="main-article__header">
+                    <span class="category-tag">Главное событие</span>
+                    <h1 class="main-article__title" itemprop="headline">Глобальное обновление стандартов семантической верстки в 2026 году</h1>
+                    <div class="main-article__meta">
+                        <span class="main-article__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            Автор: <a itemprop="url" href="https://github.com/zgutik"><span itemprop="name">Дмитрий Сайбаков</span></a>
+                        </span>
                     </div>
-            </div>
-        </section>
+                </header>
+
+                <figure class="main-article__figure">
+                    <img src="images/main-news.jpg" alt="Центральный монитор штаба NewsHub" itemprop="image" class="main-article__img">
+                    <figcaption class="main-article__caption">Редакция NewsHub анализирует изменения в HTML5 стандартах.</figcaption>
+                </figure>
+
+                <div class="main-article__content" itemprop="articleBody">
+                    <p class="drop-cap">С</p>
+                    <p>емантическая разметка становится обязательным элементом современного веба. В этом выпуске мы детально разбираем, как использование правильных тегов влияет на доступность и SEO вашего проекта.</p>
+                    <section class="main-article__sub-section">
+                        <h2 class="main-article__subtitle">Будущее за Schema.org</h2>
+                        <p>Микроразметка позволяет поисковым роботам «видеть» структуру вашей статьи так же ясно, как её видит читатель газеты.</p>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="sidebar">
+                <h2 class="sidebar__title">Последние новости</h2>
+                
+                <section class="secondary-news">
+                    <h3 class="visually-hidden">Лента коротких новостей</h3>
+                    <div class="sidebar__grid">
+                        <article class="news-card">
+                            <img src="images/main-news.jpg" alt="Вид на современную архитектуру" class="news-card__img">
+                            <h4 class="news-card__title">Архитектура 2026</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/main-news.jpg" alt="Технологическая лаборатория" class="news-card__img">
+                            <h4 class="news-card__title">Бизнес и ИИ</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle3.png" alt="Интерьер офиса" class="news-card__img">
+                            <h4 class="news-card__title">Тренды дизайна</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle4.png" alt="Городской пейзаж" class="news-card__img">
+                            <h4 class="news-card__title">Событие недели</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle5.png" alt="Научный эксперимент" class="news-card__img">
+                            <h4 class="news-card__title">Новые открытия</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle6.png" alt="Робототехника" class="news-card__img">
+                            <h4 class="news-card__title">Мир техники</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle7.png" alt="Природа" class="news-card__img">
+                            <h4 class="news-card__title">Экология сегодня</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle8.png" alt="Портрет эксперта" class="news-card__img">
+                            <h4 class="news-card__title">Мнение экспертов</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle9.png" alt="Театральная сцена" class="news-card__img">
+                            <h4 class="news-card__title">Культура</h4>
+                        </article>
+                        <article class="news-card">
+                            <img src="images/Rectangle10.png" alt="Спецкор" class="news-card__img">
+                            <h4 class="news-card__title">Спецрепортаж</h4>
+                        </article>
+                    </div>
+                </section>
+            </aside>
+        </div>
     </main>
 
-    <footer class="footer">
+    <footer class="page-footer">
         <div class="container">
-            <p>&copy; 2026 NewsHub. Built for ITiVP Lab.</p>
+            <p>&copy; 2026 NewsHub — Newspaper Edition. Все права защищены.</p>
         </div>
     </footer>
 </body>
