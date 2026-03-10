@@ -1,0 +1,47 @@
+/* css/header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--news-red);
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Бургер-иконка (скрыта на десктопе) */
+.header__burger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Адаптивность для мобильных (до 768px) */
+@media (max-width: 767px) {
+    .header__burger {
+        display: block;
+    }
+
+    .nav {
+        display: none; /* Скрываем обычное меню */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav--active {
+        display: block; /* Показываем при клике (нужен JS) */
+    }
+
+    .nav__list {
+        flex-direction: column;
+        padding: 20px;
+    }
+}

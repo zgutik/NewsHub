@@ -1,0 +1,34 @@
+/* css/main.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Сетка новостей */
+.news-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* По умолчанию в одну колонку (Mobile First) */
+}
+
+/* Планшетная версия */
+@media (min-width: 768px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Десктопная версия */
+@media (min-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Стили для Hero-новости */
+.hero-article {
+    border: 1px solid var(--border-gray);
+    padding: 20px;
+    background-color: #f9f9f9;
+}
