@@ -1,34 +1,44 @@
-/* css/main.css */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Сетка новостей */
-.news-grid {
+.newspaper-layout {
     display: grid;
+    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    gap: 30px;
+}
+
+.main-article {
+    border-right: none;
+    padding-right: 0;
+}
+
+.main-article__title {
+    font-size: 32px; /* Уменьшаем для мобильных */
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.drop-cap {
+    float: left;
+    font-size: 60px;
+    line-height: 50px;
+    padding: 4px 10px 0 0;
+}
+
+/* Сайдбар */
+.sidebar__grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка на мобилках */
     gap: 20px;
-    grid-template-columns: 1fr; /* По умолчанию в одну колонку (Mobile First) */
 }
 
-/* Планшетная версия */
-@media (min-width: 768px) {
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Десктопная версия */
+/* Переход к десктопной сетке */
 @media (min-width: 1024px) {
-    .news-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .newspaper-layout {
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
     }
-}
-
-/* Стили для Hero-новости */
-.hero-article {
-    border: 1px solid var(--border-gray);
-    padding: 20px;
-    background-color: #f9f9f9;
+    .main-article {
+        border-right: 1px solid var(--border-gray);
+        padding-right: 30px;
+    }
+    .main-article__title { font-size: 48px; }
+    .sidebar__grid { grid-template-columns: 1fr 1fr; }
 }
