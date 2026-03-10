@@ -1,13 +1,12 @@
-// Данные для главной новости (Hero)
+// Данные для главной новости
 const HERO_ARTICLE = {
     category: 'Hot Topics',
     title: 'Massa tortor nibh nulla condimentum imperdiet scelerisque...',
     excerpt: 'Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec vivamus pharetra...',
-    // Используем твою вторую картинку для главного блока
     imageUrl: 'images/Rectangle3.png' 
 };
 
-// Массив для сетки новостей
+// Сетка новостей
 const LATEST_NEWS = [
     { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle3.png" },
     { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle4.png" },
@@ -19,50 +18,32 @@ const LATEST_NEWS = [
     { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle10.png" }
 ];
 
-// Функция для отрисовки главного блока
 function renderHero() {
     const heroSection = document.getElementById('hero-section');
     if (!heroSection) return;
-    
-    heroSection.innerHTML = `
-        <div class="container">
-            <div class="hero-card">
-                <img src="${HERO_ARTICLE.imageUrl}" class="hero-img" alt="Hero">
-                <div class="hero-content">
-                    <span class="category-tag">${HERO_ARTICLE.category}</span>
-                    <h1>${HERO_ARTICLE.title}</h1>
-                    <p>${HERO_ARTICLE.excerpt}</p>
-                </div>
-            </div>
-        </div>
-    `;
+    heroSection.innerHTML = `<div class="container"><div class="hero-card"><img src="${HERO_ARTICLE.imageUrl}" class="hero-img" alt="Hero"><div class="hero-content"><span class="category-tag">${HERO_ARTICLE.category}</span><h1>${HERO_ARTICLE.title}</h1><p>${HERO_ARTICLE.excerpt}</p></div></div></div>`;
 }
 
-// Функция для отрисовки сетки
 function renderGrid() {
     const grid = document.getElementById('news-grid');
     if (!grid) return;
-    
-    grid.innerHTML = ''; // Очистка перед заполнением
-    LATEST_NEWS.forEach(item => {
-        grid.innerHTML += `
-            <article class="news-card">
-                <img src="${item.img}" alt="News">
-                <div class="news-content">
-                    <h4>${item.title}</h4>
-                    <div class="meta">${item.time} • ${item.source}</div>
-                </div>
-            </article>
-        `;
-    });
+    grid.innerHTML = LATEST_NEWS.map(item => `<article class="news-card"><img src="${item.img}" alt="News"><div class="news-content"><h4>${item.title}</h4><div class="meta">${item.time} • ${item.source}</div></div></article>`).join('');
 }
 
-// Запуск при загрузке
+// ВСЯ логика запускается ОДИН РАЗ здесь
 document.addEventListener('DOMContentLoaded', () => {
     renderHero();
     renderGrid();
-});
 
-document.getElementById('menuToggle').addEventListener('click', function() {
-    document.querySelector('.main-nav__list').classList.toggle('main-nav__list--active');
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.querySelector('.main-nav__list');
+
+    if (menuToggle && navList) {
+        menuToggle.onclick = function() {
+            navList.classList.toggle('main-nav__list--active');
+            console.log("Меню переключено!"); // Открой консоль (F12), чтобы проверить
+        };
+    } else {
+        console.error("Кнопка или список не найдены! Проверь ID в HTML.");
+    }
 });

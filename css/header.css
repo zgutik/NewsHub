@@ -18,31 +18,39 @@
     padding: 20px 0;
 }
 
-/* Адаптивный размер логотипа */
 .logo-text {
-    font-size: 40px; /* Для мобильных */
+    font-size: 40px; /* Мобильный размер */
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: -1px;
 }
 
-@media (min-width: 768px) {
-    .logo-text { font-size: 70px; }
-}
-
-@media (min-width: 1024px) {
-    .logo-text { font-size: 100px; letter-spacing: -3px; }
-}
-
-/* Навигация и бургер-меню */
+/* Навигация */
 .main-nav {
     border-top: 1px solid var(--text-black);
     border-bottom: 1px solid var(--text-black);
+    position: relative;
 }
 
-/* Скрываем список на мобильных, если нет активного класса */
+.main-nav__toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.main-nav__toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-black);
+    margin: 4px 0;
+}
+
 .main-nav__list {
-    display: none; 
+    display: none; /* Скрыто на мобильных */
     flex-direction: column;
     list-style: none;
     padding: 0;
@@ -50,9 +58,8 @@
     text-align: center;
 }
 
-/* Класс для открытия меню (будет переключаться через JS или чекбокс) */
 .main-nav__list--active {
-    display: flex;
+    display: flex !important; /* Показываем при клике */
 }
 
 .main-nav__link {
@@ -62,19 +69,16 @@
     padding: 15px 0;
     font-weight: bold;
     font-family: var(--font-sans);
-    text-transform: uppercase;
-    font-size: 14px;
 }
 
-/* Десктопная версия меню */
+/* Адаптив для планшетов и ПК */
 @media (min-width: 768px) {
+    .logo-text { font-size: 80px; }
+    .main-nav__toggle { display: none; }
     .main-nav__list {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 8px 0;
     }
-    .main-nav__link {
-        padding: 0 20px;
-    }
+    .main-nav__link { padding: 10px 20px; }
 }

@@ -1,22 +1,26 @@
 @import 'variables.css';
 @import 'header.css';
 @import 'main.css';
-@import 'footer.css';
 
-* { box-sizing: border-box; }
+/* Сброс стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: #fff;
     color: var(--text-black);
     font-family: var(--font-main);
-    margin: 0;
     line-height: 1.5;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
-
-/* Вставь сюда стили для .skip-link и .visually-hidden из своего кода */
