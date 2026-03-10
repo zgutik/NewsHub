@@ -4,19 +4,19 @@ const HERO_ARTICLE = {
     title: 'Massa tortor nibh nulla condimentum imperdiet scelerisque...',
     excerpt: 'Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec vivamus pharetra...',
     // Используем твою вторую картинку для главного блока
-    imageUrl: 'images/Rectangle 3.png' 
+    imageUrl: 'images/Rectangle3.png' 
 };
 
 // Массив для сетки новостей
 const LATEST_NEWS = [
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 3.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 4.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 5.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 6.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 7.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 8.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 9.png" },
-    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle 10.png" }
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle3.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle4.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle5.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle6.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle7.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle8.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle9.png" },
+    { title: "News Title Lorem Ipsum Dolor Sit Amet", time: "1 Hour Ago", source: "CNN Indonesia", img: "images/Rectangle10.png" }
 ];
 
 // Функция для отрисовки главного блока
@@ -61,4 +61,8 @@ function renderGrid() {
 document.addEventListener('DOMContentLoaded', () => {
     renderHero();
     renderGrid();
+});
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+    document.querySelector('.main-nav__list').classList.toggle('main-nav__list--active');
 });

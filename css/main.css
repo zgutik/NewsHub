@@ -1,0 +1,44 @@
+.newspaper-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    gap: 30px;
+}
+
+.main-article {
+    border-right: none;
+    padding-right: 0;
+}
+
+.main-article__title {
+    font-size: 32px; /* Уменьшаем для мобильных */
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.drop-cap {
+    float: left;
+    font-size: 60px;
+    line-height: 50px;
+    padding: 4px 10px 0 0;
+}
+
+/* Сайдбар */
+.sidebar__grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка на мобилках */
+    gap: 20px;
+}
+
+/* Переход к десктопной сетке */
+@media (min-width: 1024px) {
+    .newspaper-layout {
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
+    }
+    .main-article {
+        border-right: 1px solid var(--border-gray);
+        padding-right: 30px;
+    }
+    .main-article__title { font-size: 48px; }
+    .sidebar__grid { grid-template-columns: 1fr 1fr; }
+}
