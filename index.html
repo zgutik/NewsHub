@@ -10,7 +10,7 @@
     <a href="#main" class="skip-link">Перейти к основному содержимому</a>
 
     <header class="page-header" itemscope itemtype="https://schema.org/Organization">
-        <div class="container">
+        <div class="container page-header__container">
             <div class="page-header__top">
                 <time class="page-header__date" datetime="2026-02-24T09:00:00+03:00">Вторник, 24 февраля 2026</time>
                 <div class="page-header__edition">Специальный выпуск</div>
@@ -22,25 +22,18 @@
                 </a>
             </div>
             
-            <nav class="main-nav">
-                <button class="main-nav__toggle" id="menuToggle" aria-label="Открыть меню">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="main-nav__list">
-                    <li><a href="#" class="main-nav__link">Politics</a></li>
-                    <li><a href="#" class="main-nav__link">World</a></li>
-                    <li><a href="#" class="main-nav__link">Economy</a></li>
-                    <li><a href="#" class="main-nav__link">Science</a></li>
-                    <li><a href="#" class="main-nav__link">Culture</a></li>
-                    <li><a href="#" class="main-nav__link">Tech</a></li>
-                    <li><a href="#" class="main-nav__link">Travel</a></li>
-                </ul>
-            </nav>
+            <button class="burger-menu" aria-label="Открыть меню" aria-expanded="false" aria-controls="mainNav">
+                <span class="burger-menu__line"></span>
+                <span class="burger-menu__line"></span>
+                <span class="burger-menu__line"></span>
+            </button>
 
-            <script src="js/script.js"></script>
+            <nav class="nav" id="mainNav">
+                <a href="#" class="nav__link nav__link--active" data-category="all">Все новости</a>
+                <a href="#" class="nav__link" data-category="Hot Topics">Hot Topics</a>
+                <a href="#" class="nav__link" data-category="Технологии">Технологии</a>
+                <a href="#" class="nav__link" data-category="Спорт">Спорт</a>
+            </nav>
         </div>
     </header>
 
@@ -74,52 +67,21 @@
             </article>
 
             <aside class="sidebar">
-                <h2 class="sidebar__title">Последние новости</h2>
+                <section class="suggest-news">
+                    <h2 class="sidebar__title">Предложить новость</h2>
+                    <form id="suggestForm" class="suggest-form" novalidate>
+                        <input type="text" id="suggestTitle" class="form-input" placeholder="Заголовок (мин. 5 символов)">
+                        <textarea id="suggestText" class="form-input form-textarea" placeholder="Текст новости..."></textarea>
+                        <div id="formError" class="form-error"></div>
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </form>
+                </section>
+
+                <h2 class="sidebar__title" style="margin-top: 30px;">Последние новости</h2>
                 
                 <section class="secondary-news">
                     <h3 class="visually-hidden">Лента коротких новостей</h3>
-                    <div class="sidebar__grid">
-                        <article class="news-card">
-                            <img src="images/main-news.jpg" alt="Вид на современную архитектуру" class="news-card__img">
-                            <h4 class="news-card__title">Архитектура 2026</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/main-news.jpg" alt="Технологическая лаборатория" class="news-card__img">
-                            <h4 class="news-card__title">Бизнес и ИИ</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle3.png" alt="Интерьер офиса" class="news-card__img">
-                            <h4 class="news-card__title">Тренды дизайна</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle4.png" alt="Городской пейзаж" class="news-card__img">
-                            <h4 class="news-card__title">Событие недели</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle5.png" alt="Научный эксперимент" class="news-card__img">
-                            <h4 class="news-card__title">Новые открытия</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle6.png" alt="Робототехника" class="news-card__img">
-                            <h4 class="news-card__title">Мир техники</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle7.png" alt="Природа" class="news-card__img">
-                            <h4 class="news-card__title">Экология сегодня</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle8.png" alt="Портрет эксперта" class="news-card__img">
-                            <h4 class="news-card__title">Мнение экспертов</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle9.png" alt="Театральная сцена" class="news-card__img">
-                            <h4 class="news-card__title">Культура</h4>
-                        </article>
-                        <article class="news-card">
-                            <img src="images/Rectangle10.png" alt="Спецкор" class="news-card__img">
-                            <h4 class="news-card__title">Спецрепортаж</h4>
-                        </article>
-                    </div>
+                    <div class="latest-news__grid" id="newsContainer"></div>
                 </section>
             </aside>
         </div>
@@ -130,5 +92,16 @@
             <p>&copy; 2026 NewsHub — Newspaper Edition. Все права защищены.</p>
         </div>
     </footer>
+
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Закрыть окно">&times;</span>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <p id="modalDescription" class="modal-description"></p>
+        </div>
+    </div>
+    
+    <script type="module" src="js/script.js" defer></script>
 </body>
 </html>

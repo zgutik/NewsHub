@@ -6,7 +6,7 @@
 
 .newspaper-layout {
     display: grid;
-    grid-template-columns: 1fr; /* 1 колонка на телефоне */
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
@@ -22,16 +22,10 @@
     border: 1px solid #000;
 }
 
-.sidebar__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
 
-/* Для больших экранов (ПК) */
 @media (min-width: 1024px) {
     .newspaper-layout {
-        grid-template-columns: 2fr 1fr; /* 2 колонки */
+        grid-template-columns: 2fr 1fr;
         gap: 50px;
     }
     .main-article {
@@ -39,5 +33,4 @@
         padding-right: 30px;
     }
     .main-article__title { font-size: 48px; }
-    .sidebar__grid { grid-template-columns: 1fr 1fr; }
 }

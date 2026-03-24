@@ -19,59 +19,12 @@
 }
 
 .logo-text {
-    font-size: 40px; /* Мобильный размер */
+    font-size: 40px; 
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: -1px;
 }
 
-/* Навигация */
-.main-nav {
-    border-top: 1px solid var(--text-black);
-    border-bottom: 1px solid var(--text-black);
-    position: relative;
-}
-
-.main-nav__toggle {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 15px;
-    margin: 0 auto;
-}
-
-.main-nav__toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-black);
-    margin: 4px 0;
-}
-
-.main-nav__list {
-    display: none; /* Скрыто на мобильных */
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.main-nav__list--active {
-    display: flex !important; /* Показываем при клике */
-}
-
-.main-nav__link {
-    display: block;
-    text-decoration: none;
-    color: var(--text-black);
-    padding: 15px 0;
-    font-weight: bold;
-    font-family: var(--font-sans);
-}
-
-/* Адаптив для планшетов и ПК */
 @media (min-width: 768px) {
     .logo-text { font-size: 80px; }
     .main-nav__toggle { display: none; }
