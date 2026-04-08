@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewsHub — Главный выпуск | Семантическая разметка и доступность</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="page">
     <a href="#main" class="skip-link">Перейти к основному содержимому</a>
 
@@ -15,13 +17,13 @@
                 <time class="page-header__date" datetime="2026-02-24T09:00:00+03:00">Вторник, 24 февраля 2026</time>
                 <div class="page-header__edition">Специальный выпуск</div>
             </div>
-            
+
             <div class="page-header__logo-zone">
                 <a href="/" itemprop="url" class="page-header__logo-link">
                     <span class="logo-text" itemprop="name">NewsHub</span>
                 </a>
             </div>
-            
+
             <button class="burger-menu" aria-label="Открыть меню" aria-expanded="false" aria-controls="mainNav">
                 <span class="burger-menu__line"></span>
                 <span class="burger-menu__line"></span>
@@ -39,29 +41,37 @@
 
     <main id="main" class="page-main container">
         <div class="newspaper-layout">
-            
+
             <article class="main-article" itemscope itemtype="https://schema.org/NewsArticle">
                 <header class="main-article__header">
                     <span class="category-tag">Главное событие</span>
-                    <h1 class="main-article__title" itemprop="headline">Глобальное обновление стандартов семантической верстки в 2026 году</h1>
+                    <h1 class="main-article__title" itemprop="headline">Глобальное обновление стандартов семантической
+                        верстки в 2026 году</h1>
                     <div class="main-article__meta">
-                        <span class="main-article__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                            Автор: <a itemprop="url" href="https://github.com/zgutik"><span itemprop="name">Дмитрий Шайбаков</span></a>
+                        <span class="main-article__author" itemprop="author" itemscope
+                            itemtype="https://schema.org/Person">
+                            Автор: <a itemprop="url" href="https://github.com/zgutik" rel="noopener noreferrer"
+                                target="_blank"><span itemprop="name">Дмитрий Шайбаков</span></a>
                         </span>
                     </div>
                 </header>
 
                 <figure class="main-article__figure">
-                    <img src="images/main-news.jpg" alt="Центральный монитор штаба NewsHub" itemprop="image" class="main-article__img">
-                    <figcaption class="main-article__caption">Редакция NewsHub анализирует изменения в HTML5 стандартах.</figcaption>
+                    <img src="images/main-news.jpg" alt="Центральный монитор штаба NewsHub" itemprop="image"
+                        class="main-article__img">
+                    <figcaption class="main-article__caption">Редакция NewsHub анализирует изменения в HTML5 стандартах.
+                    </figcaption>
                 </figure>
 
                 <div class="main-article__content" itemprop="articleBody">
                     <p class="drop-cap">С</p>
-                    <p>емантическая разметка становится обязательным элементом современного веба. В этом выпуске мы детально разбираем, как использование правильных тегов влияет на доступность и SEO вашего проекта.</p>
+                    <p>емантическая разметка становится обязательным элементом современного веба. В этом выпуске мы
+                        детально разбираем, как использование правильных тегов влияет на доступность и SEO вашего
+                        проекта.</p>
                     <section class="main-article__sub-section">
                         <h2 class="main-article__subtitle">Будущее за Schema.org</h2>
-                        <p>Микроразметка позволяет поисковым роботам «видеть» структуру вашей статьи так же ясно, как её видит читатель газеты.</p>
+                        <p>Микроразметка позволяет поисковым роботам «видеть» структуру вашей статьи так же ясно, как её
+                            видит читатель газеты.</p>
                     </section>
                 </div>
             </article>
@@ -70,15 +80,17 @@
                 <section class="suggest-news">
                     <h2 class="sidebar__title">Предложить новость</h2>
                     <form id="suggestForm" class="suggest-form" novalidate>
-                        <input type="text" id="suggestTitle" class="form-input" placeholder="Заголовок (мин. 5 символов)">
-                        <textarea id="suggestText" class="form-input form-textarea" placeholder="Текст новости..."></textarea>
+                        <input type="text" id="suggestTitle" class="form-input"
+                            placeholder="Заголовок (мин. 5 символов)">
+                        <textarea id="suggestText" class="form-input form-textarea"
+                            placeholder="Текст новости..."></textarea>
                         <div id="formError" class="form-error"></div>
                         <button type="submit" class="submit-btn">Отправить</button>
                     </form>
                 </section>
 
                 <h2 class="sidebar__title" style="margin-top: 30px;">Последние новости</h2>
-                
+
                 <section class="secondary-news">
                     <h3 class="visually-hidden">Лента коротких новостей</h3>
                     <div class="latest-news__grid" id="newsContainer"></div>
@@ -101,7 +113,8 @@
             <p id="modalDescription" class="modal-description"></p>
         </div>
     </div>
-    
+
     <script type="module" src="js/script.js" defer></script>
 </body>
+
 </html>
