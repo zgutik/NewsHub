@@ -3,7 +3,10 @@ import NewsList from './components/features/NewsList';
 import { MOCK_NEWS } from './data/mockData';
 
 export default function App() {
- 
+  console.group('Данные приложения');
+  console.table(MOCK_NEWS); 
+  console.info('Приложение успешно загружено');
+  console.groupEnd();
   const categories = [...new Set(MOCK_NEWS.map(item => item.category))];
 
   
